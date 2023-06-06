@@ -8,7 +8,7 @@ body{
     box-sizing: border-box;
     padding: 5px;
     width: 350px;
-    height: 465px;
+    height: 490px;
     margin-top: 70px;
     border-radius: 10px;
     
@@ -16,12 +16,24 @@ body{
 #screenContainer{
     padding: 1px;
     width: 99%;
-    height: 130px;
+    height: 100px;
     background-color: rgb(255, 255, 255);
     box-sizing: border-box;
     text-align: right;
     font-size: 60px;
     overflow-x: scroll;
+
+}
+#historyContainer{
+    box-sizing: border-box;
+    padding: 5px;
+    width: 99%;
+    height: 30px;
+    background-color: rgb(229, 229, 229);
+    font-size: 15px;
+    font-weight: bold;
+    text-align: right;
+    border-radius: 5px;
 
 }
 #buttonsContainer{

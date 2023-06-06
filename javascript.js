@@ -2,6 +2,7 @@ let powerButton = document.getElementById("power");
 let deleteButton = document.getElementById("delete");
 let clearButton = document.getElementById("clear");
 let screen = document.getElementById("screenContainer");
+let history = document.getElementById("historyContainer");
 let operators = document.querySelectorAll('[operators]');
 let numbers = document.querySelectorAll('[numbers]');
 let equalButton = document.getElementById("equal");
@@ -63,6 +64,7 @@ deleteButton.addEventListener('click', () => {
 
 clearButton.addEventListener('click', () => {
     screen.innerHTML = '';
+    history.innerHTML = '';
     startingIndex = 0;
     list = [];
 });
@@ -134,7 +136,7 @@ equalButton.addEventListener('click', () => {
     }
     console.log(list);
 
-
+    history.innerHTML = screen.innerHTML;
     screen.innerHTML = list.pop();
     list = [];
     startingIndex = 0;
