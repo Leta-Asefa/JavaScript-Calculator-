@@ -1,4 +1,6 @@
-let powerButton = document.getElementById("power");
+let powerButton = document.getElementById("powerButton");
+let buttons = document.getElementsByTagName("button");
+let  container = document.getElementById("container");
 let deleteButton = document.getElementById("delete");
 let clearButton = document.getElementById("clear");
 let screen = document.getElementById("screenContainer");
@@ -7,7 +9,12 @@ let operators = document.querySelectorAll('[operators]');
 let numbers = document.querySelectorAll('[numbers]');
 let equalButton = document.getElementById("equal");
 let startingIndex = 0;
-let list=new Array();
+let list = new Array();
+let powerFlag = true;
+
+function append(value) {
+    screen.innerHTML += value.toString(); 
+}
 
 operators.forEach(button => {
     button.addEventListener('click', () => {
@@ -47,11 +54,6 @@ numbers.forEach(button => {
 
     
 });
-
-function append(value) {
-    screen.innerHTML += value.toString(); 
-
-}
 
 
 deleteButton.addEventListener('click', () => {
@@ -142,4 +144,38 @@ equalButton.addEventListener('click', () => {
     startingIndex = 0;
     
 });
+
+
+powerButton.onclick = function power() {
+    if (powerFlag === true) {
+        screen.style.backgroundColor = "black"
+        container.style.backgroundColor = "rgb(34, 34, 34)"
+        history.style.backgroundColor = "black"
+        document.body.style.backgroundColor = "black"
+        buttons[0].style.backgroundColor = "black";
+        buttons[0].style.color = "white";
+        buttons[0].style.fontSize = "15px";
+        for (let i = 1; i < buttons.length; i++) {
+            buttons[i].style.display = "none"
+        }
+
+        powerFlag = false;
+        console.log(powerFlag)
+    } else {
+        screen.style.backgroundColor = "white"
+        container.style.backgroundColor = "white"
+        history.style.backgroundColor = "lightgrey"
+        document.body.style.backgroundColor = "rgb(41, 52, 53)"
+        buttons[0].style.backgroundColor = "white";
+        buttons[0].style.color = "black";
+        buttons[0].style.fontSize = "21px";
+        for (let i = 1; i < buttons.length; i++) {
+            buttons[i].style.display = "inline"
+        }
+        powerFlag = true
+        console.log(powerFlag)
+    }
+}
+
+
 
